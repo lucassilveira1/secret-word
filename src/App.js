@@ -66,7 +66,7 @@ function App() {
     setPickedWord(word);
     setLetters(wordLetters);
 
-    setGameStage(stages[1].name);
+    setGameStage(stages[0].name);
   }, [pickWordAndCategory]);
 
   // process letter input
