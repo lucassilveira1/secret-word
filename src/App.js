@@ -66,7 +66,6 @@ function App() {
     setPickedWord(word);
     setLetters(wordLetters);
 
-    setGameStage(stages[0].name);
     setGameStage(stages[1].name);
   }, [pickWordAndCategory]);
 
@@ -131,14 +130,14 @@ function App() {
     console.log(guessedLetters);
 
     // win condition
-    if (guessedLetters.length === uniqueLetters.length) {
+    if (guessedLetters.length === uniqueLetters.length && gameStage === stages[1].name) {
       // add score
       setScore((actualScore) => (actualScore += 100));
 
       // restart game with new word
       startGame();
     }
-  }, [guessedLetters, letters, startGame]);
+  }, [guessedLetters, letters, startGame, gameStage]);
 
   return (
     <div className="App">
